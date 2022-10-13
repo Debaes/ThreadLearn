@@ -6,7 +6,7 @@ package com.dgx.chapter1.stage5.deadlock;
  * 1. 持有两把锁
  *
  */
-public class MultiThreadError implements Runnable {
+public class DeadLock implements Runnable {
 
     int flag = 1;
 
@@ -15,8 +15,8 @@ public class MultiThreadError implements Runnable {
     static Object o2 = new Object();
 
     public static void main(String[] args) {
-        MultiThreadError r1 = new MultiThreadError();
-        MultiThreadError r2 = new MultiThreadError();
+        DeadLock r1 = new DeadLock();
+        DeadLock r2 = new DeadLock();
         r1.flag = 0;
         r2.flag = 1;
         new Thread(r1).start();
